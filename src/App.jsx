@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import axios from 'axios';
-import viteLogo from '/vite.svg'
-
 
 function App() {
 
@@ -20,11 +18,7 @@ function App() {
     setAccount({ ...account, [name]: value })
 
   }
-  const handleLogin = (e) => {
-    // console.log(import.meta.env.VITE_BASE_URL);
-    // console.log(import.meta.env.VITE_API_PATH);
-
-
+  const handleLogin = (e) => {    
     axios.post(`${import.meta.env.VITE_BASE_URL}/v2/admin/signin`, account)
       .then((res) => {
         setIsAuth(true);
